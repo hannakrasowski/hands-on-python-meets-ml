@@ -281,14 +281,14 @@ def neuralnetwork_hyperparameter_tuning(X_train, y_train, X_val, y_val):
     ############################################################################
     _,input_size = np.shape(X_train)
     num_classes = 10
-    num_iters = [5000] #500, 1000, 2000,3500
+    num_iters = [8000] #500, 1000, 2000,3500
     
     results = {}
     best_val = -1
     best_softmax = None
     all_classifiers = []
     
-    learning_rates = [1e-4,5e-3] # [8e-4,2e-3] [2e-4,1e-3]
+    learning_rates = [0.5e-3,1.5e-3] # [8e-4,2e-3] [2e-4,1e-3]
     hidden_size = [125] #50,75
     regularization_strengths = [0.05] #[0.005, 0.05] [0.05, 0.5]
     
