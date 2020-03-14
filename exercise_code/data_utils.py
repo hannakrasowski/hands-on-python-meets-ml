@@ -8,18 +8,23 @@ import numpy as np
 
 def load_cifar_batch(filename):
     """Load single batch of CIFAR-10."""
-    with open(filename, 'rb') as f:
+    X_raw =[]
+    Y_raw = []
+    for i in range(5):
+        with open(filename + str(i)+'.p', 'rb') as f:
         # load with encoding because file was pickled with Python 2
-        data_dict = pickle.load(f, encoding='latin1')
-        X = np.array(data_dict['data'])
-        Y = np.array(data_dict['labels'])
-        X = X.reshape(-1, 3, 32, 32).transpose(0, 2, 3, 1).astype("float")
-        return X, Y
+            data_dict = pickle.load(f, encoding='latin1')
+            X_raw.extend(data_dict['data'])
+            Y_raw.extend(data_dict['labels'])
+    X = np.array(X_raw)
+    Y = np.array(Y_raw)
+    X = X.reshape(-1, 3, 32, 32).transpose(0, 2, 3, 1).astype("float")
+    return X, Y
 
 
 def load_CIFAR10(root_dir):
     """Load all of CIFAR-10."""
-    f = os.path.join(root_dir, 'cifar10_train.p')
+    f = os.path.join(root_dir, 'cifar10_train')
     X_batch, y_batch = load_cifar_batch(f)
     return X_batch, y_batch
 
