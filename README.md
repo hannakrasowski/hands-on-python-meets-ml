@@ -4,7 +4,8 @@ This git provides a short introduction to python, jupyter notebooks and supervis
 
 You can either run everthing on kaggle:
 
-TUTORIAL: 
+TUTORIAL: 	https://www.kaggle.com/hannakrasowski/hands-on-python-meets-machine-learning
+
 SOLUTIONS:	https://www.kaggle.com/hannakrasowski/hands-on-python-meets-machine-learning-solutions
 
 But the public resources are limited. So if you really want to play around and understand all of the code you should install a jupyter notebook distribution on your device. Therefore we provide a short describtion of how to install Anaconda and how to get this repository running.
